@@ -32,7 +32,7 @@ const Hero = () => {
           >
             {/* Professional Badge */}
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-blue-400 text-[10px] font-bold tracking-[0.2em] uppercase mb-6 backdrop-blur-sm">
-              Software Solutions & CyberSecurity
+              ICT Solutions & CyberSecurity
             </div>
 
             {/* Main Headline */}

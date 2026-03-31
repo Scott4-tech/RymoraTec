@@ -145,62 +145,62 @@ const PrintingDesign = () => {
         <div className="max-w-7xl mx-auto px-6 space-y-40">
           
           {/* 01 Branding */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-            <div className="order-2 lg:order-1">
-              <div className="text-8xl font-serif font-bold text-verdant-mid/10 mb-8">01</div>
-              <h2 className="text-5xl font-serif font-bold text-verdant-deep mb-8">Branding</h2>
-              <p className="text-xl text-verdant-mid/80 font-serif italic mb-10 leading-relaxed">
-                Beyond a logo, we construct a living ethos. Our branding process explores the root values of your business to create a timeless, organic identity.
-              </p>
-              <ul className="space-y-4 mb-10">
-                {['Visual Identity Systems', 'Brand Voice & Strategy', 'Typography Curation'].map((item) => (
-                  <li key={item} className="flex items-center gap-3 text-verdant-deep font-medium">
-                    <CheckCircle2 size={20} className="text-verdant-mid" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-              
-            </div>
-            <div className="order-1 lg:order-2 aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
-              <img 
-                src="/brand.jpg" 
-                alt="Branding Process" 
-                className="w-full aspect-[4/3] object-cover"
-                referrerPolicy="no-referrer"
-              />
-            </div>
-          </div>
+<div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+  <div className="order-1">
+    <div className="text-8xl font-serif font-bold text-verdant-mid/10 mb-8">01</div>
+    <h2 className="text-5xl font-serif font-bold text-verdant-deep mb-8">Branding</h2>
+    <p className="text-xl text-verdant-mid/80 font-serif italic mb-10 leading-relaxed">
+      Beyond a logo, we construct a living ethos. Our branding process explores the root values of your business to create a timeless, organic identity.
+    </p>
+    <ul className="space-y-4 mb-10">
+      {['Visual Identity Systems', 'Brand Voice & Strategy', 'Typography Curation'].map((item) => (
+        <li key={item} className="flex items-center gap-3 text-verdant-deep font-medium">
+          <CheckCircle2 size={20} className="text-verdant-mid" />
+          {item}
+        </li>
+      ))}
+    </ul>
+   
+  </div>
+  <div className="order-2 rounded-2xl overflow-hidden shadow-2xl">
+    <img 
+      src="brand.jpg" 
+      alt="Branding Process" 
+      className="w-full aspect-[4/3] object-cover"
+      referrerPolicy="no-referrer"
+    />
+  </div>
+</div>
 
-          {/* 02 Printing */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-            <div className="rounded-2xl overflow-hidden shadow-2xl">
-              <img 
-                src="pri1.avif" 
-                alt="Printing Press" 
-                className="w-full aspect-[5/4] object-cover"
-                referrerPolicy="no-referrer"
-              />
-            </div>
-            <div>
-              <div className="text-8xl font-serif font-bold text-verdant-mid/10 mb-8">02</div>
-              <h2 className="text-5xl font-serif font-bold text-verdant-deep mb-8">Printing</h2>
-              <p className="text-xl text-verdant-mid/80 font-serif italic mb-10 leading-relaxed">
-                The tactile realization of your vision. We specialize in premium finishes, sustainable paper stocks, and high-fidelity production.
-              </p>
-              <div className="grid grid-cols-2 gap-4 mb-10">
-                <div className="bg-verdant-light p-6 rounded-xl text-center">
-                  <Layers className="mx-auto mb-3 w-6 h-6" />
-                  <span className="text-xs font-bold uppercase tracking-widest">Letterpress</span>
-                </div>
-                <div className="bg-verdant-light p-6 rounded-xl text-center">
-                  <Layout className="mx-auto mb-3 w-6 h-6" />
-                  <span className="text-xs font-bold uppercase tracking-widest">Foil Stamping</span>
-                </div>
-              </div>
-              
-            </div>
-          </div>
+{/* 02 Printing */}
+<div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+  <div className="order-1 lg:order-2">
+    <div className="text-8xl font-serif font-bold text-verdant-mid/10 mb-8">02</div>
+    <h2 className="text-5xl font-serif font-bold text-verdant-deep mb-8">Printing</h2>
+    <p className="text-xl text-verdant-mid/80 font-serif italic mb-10 leading-relaxed">
+      The tactile realization of your vision. We specialize in premium finishes, sustainable paper stocks, and high-fidelity production.
+    </p>
+    <div className="grid grid-cols-2 gap-4 mb-10">
+      <div className="bg-verdant-light p-6 rounded-xl text-center">
+        <Layers className="mx-auto mb-3 w-6 h-6" />
+        <span className="text-xs font-bold uppercase tracking-widest">Letterpress</span>
+      </div>
+      <div className="bg-verdant-light p-6 rounded-xl text-center">
+        <Layout className="mx-auto mb-3 w-6 h-6" />
+        <span className="text-xs font-bold uppercase tracking-widest">Foil Stamping</span>
+      </div>
+    </div>
+   
+  </div>
+  <div className="order-2 lg:order-1 rounded-2xl overflow-hidden shadow-2xl">
+    <img 
+      src="pri1.avif" 
+      alt="Printing Press" 
+      className="w-full aspect-[5/4] object-cover"
+      referrerPolicy="no-referrer"
+    />
+  </div>
+</div>
 
           {/* 03 Design */}
           <div className="bg-verdant-deep rounded-[3rem] p-12 md:p-24 text-white relative overflow-hidden">

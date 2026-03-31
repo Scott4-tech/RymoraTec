@@ -9,6 +9,7 @@ import Home from './pages/Home';
 import ICTSolutions from './pages/ICTSolutions';
 import Cybersecurity from './pages/Cybersecurity';
 import Networking from './pages/Networking';
+import PrintingDesign from './pages/PrintingDesign';
 
 // Scroll to top on route change
 const ScrollToTop = () => {
@@ -30,6 +31,7 @@ export default function App() {
         <Route path="/ict-solutions" element={<ICTSolutions />} />
         <Route path="/cybersecurity" element={<Cybersecurity />} />
         <Route path="/networking" element={<Networking />} />
+        <Route path="/printing-design" element={<PrintingDesign />} />
       </Routes>
     </Router>
   );

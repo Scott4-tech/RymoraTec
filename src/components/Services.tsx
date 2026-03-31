@@ -43,7 +43,7 @@ const services = [
     image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&q=80&w=1000",
     cta: "Start your project",
     accent: "#10b981",
-    path: "#contact"
+    path: "/printing-design"
   }
 ];
 

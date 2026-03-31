@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
 @import "tailwindcss";
 
 @theme {
@@ -8,6 +8,15 @@
   
   --font-sans: "Space Grotesk", "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Space Grotesk", sans-serif;
+  --font-serif: "Cormorant Garamond", serif;
+  --font-baskerville: "Libre Baskerville", serif;
+
+  /* Verdant Luxe inspired palette */
+  --color-verdant-deep: #1a4d2e;
+  --color-verdant-mid: #2d6a4f;
+  --color-verdant-light: #e8f9ee;
+  --color-verdant-pale: #f5fcf7;
+  --color-verdant-accent: #d4a373;
 }
 
 @layer base {

@@ -96,7 +96,7 @@ const Footer = ({ theme = 'dark' }: FooterProps) => {
               </li>
               <li className="flex items-center gap-3">
                 <Phone size={18} className={accentTextClass} />
-                <a href="tel:+263783765100" className={`hover:${accentTextClass} transition-colors`}>+263 78 376 5100</a>
+                <a href="tel:+263783765100" className={`hover:${accentTextClass} transition-colors`}>+263 78 905 7818</a>
               </li>
               <li className="flex items-center gap-3">
                 <MapPin size={18} className={accentTextClass} />

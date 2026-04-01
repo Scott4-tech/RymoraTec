@@ -247,9 +247,11 @@ const PrintingDesign = () => {
             <p className="text-xl text-verdant-mid/80 font-serif italic mb-12">
               Schedule a consultation at our studio to explore materials and vision.
             </p>
+            <a href="#contact">
             <button className="bg-verdant-deep text-white px-12 py-5 rounded-xl font-bold text-lg hover:bg-verdant-mid transition-all shadow-xl shadow-verdant-deep/20">
               START A PROJECT
             </button>
+            </a>
           </div>
         </div>
       </section>

@@ -92,7 +92,7 @@ const Footer = ({ theme = 'dark' }: FooterProps) => {
             <ul className={`space-y-4 ${mutedTextClass} text-sm`}>
               <li className="flex items-center gap-3">
                 <Mail size={18} className={accentTextClass} />
-                <a href="mailto:info@rymora.co.zw" className={`hover:${accentTextClass} transition-colors`}>info@rymora.co.zw</a>
+                <a href="mailto:info@rymora.co.zw" className={`hover:${accentTextClass} transition-colors`}>info@rymoratech.co.zw</a>
               </li>
               <li className="flex items-center gap-3">
                 <Phone size={18} className={accentTextClass} />

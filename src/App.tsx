@@ -5,6 +5,7 @@
 
 import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { Analytics } from '@vercel/analytics/react';
 import Home from './pages/Home';
 import ICTSolutions from './pages/ICTSolutions';
 import Cybersecurity from './pages/Cybersecurity';
@@ -33,6 +34,7 @@ export default function App() {
         <Route path="/networking" element={<Networking />} />
         <Route path="/printing-design" element={<PrintingDesign />} />
       </Routes>
+      <Analytics />
     </Router>
   );
 }

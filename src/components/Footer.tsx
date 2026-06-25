@@ -59,7 +59,7 @@ const Footer = ({ theme = 'dark' }: FooterProps) => {
             <div className="flex gap-4">
               <a href="#" className={`${mutedTextClass} hover:${accentTextClass} transition-colors`}><Facebook size={20} /></a>
               <a href="https://www.instagram.com/rymoratechnologies/" className={`${mutedTextClass} hover:${accentTextClass} transition-colors`}><Instagram size={20} /></a>
-              <a href="#" className={`${mutedTextClass} hover:${accentTextClass} transition-colors`}><Linkedin size={20} /></a>
+              <a href="https://www.linkedin.com/company/rymora-technologies/" className={`${mutedTextClass} hover:${accentTextClass} transition-colors`}><Linkedin size={20} /></a>
             </div>
           </div>
 

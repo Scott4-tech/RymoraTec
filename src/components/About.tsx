@@ -7,22 +7,22 @@ const About = () => {
     {
       icon: <Target className="text-rymora-accent" size={24} />,
       title: "Our Mission",
-      description: "To empower businesses with reliable ICT solutions and creative digital services that improve efficiency, security, and brand visibility."
+      description: "To empower Zimbabwean businesses through innovative, scalable, and intelligent digital solutions that drive growth and efficiency."
     },
     {
       icon: <Eye className="text-rymora-accent" size={24} />,
       title: "Our Vision",
-      description: "To become a leading ICT and digital solutions provider in Zimbabwe and across Africa, known for innovation, quality, and reliability."
+      description: "To be the leading catalyst for digital transformation in Africa, setting the standard for excellence in software engineering and AI automation."
     },
     {
       icon: <ShieldCheck className="text-rymora-accent" size={24} />,
       title: "Our Commitment",
-      description: "We are dedicated to delivering secure, high-quality technology and creative solutions that solve real business challenges and support long-term client success."
+      description: "We are dedicated to delivering high-quality, secure, and reliable technology that solves real-world business challenges."
     },
     {
       icon: <Zap className="text-rymora-accent" size={24} />,
       title: "Innovation First",
-      description: "We continuously explore new technologies and creative ideas to help our clients stay competitive in an ever-evolving digital world."
+      description: "We constantly explore emerging technologies like AI and machine learning to keep our clients ahead of the competition."
     }
   ];
 
@@ -41,13 +41,13 @@ const About = () => {
             </h2>
             <div className="space-y-6 text-slate-400 text-lg leading-relaxed">
               <p>
-                Rymora Technologies (Private) Limited is an innovative Information and Communication Technology (ICT) company based in Harare, Zimbabwe. We specialize in delivering reliable technology solutions and creative digital services that help businesses operate efficiently in today’s digital environment. Our mission is to empower organizations with modern tools and professional support that improve productivity, security, and brand visibility.
+                Rymora Technologies (Private Limited) is a mission-driven tech powerhouse dedicated to transforming the digital landscape. We combine innovative thinking with technical expertise to deliver solutions that empower businesses and communities.
               </p>
               <p>
-                Our services include ICT solutions, cybersecurity, networking, printing, graphic design, and corporate branding. By combining technical expertise with creative design, we provide businesses with a complete solution for both their digital infrastructure and visual identity. This integrated approach allows our clients to manage their technology and branding needs through a single trusted partner.
+                Founded on the principles of integrity and technical precision, we have grown into a multi-disciplinary team of engineers and IT experts. As the official distributor of Enpass in Zimbabwe, we deliver top-tier password management alongside our advanced software engineering and AI automation solutions.
               </p>
               <p>
-                At Rymora Technologies, we are committed to innovation, reliability, and customer satisfaction. We strive to build long-term relationships with our clients by delivering secure, scalable, and high-quality solutions that support growth and success in a rapidly evolving digital world.
+                Our approach is deeply collaborative. We work as an extension of your team, ensuring that every line of code we write and every system we automate aligns perfectly with your long-term strategic goals.
               </p>
             </div>
           </motion.div>

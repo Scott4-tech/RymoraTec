@@ -4,6 +4,7 @@ import About from '../components/About';
 import Services from '../components/Services';
 import WhyChooseUs from '../components/WhyChooseUs';
 import Testimonials from '../components/Testimonials';
+import FAQ from '../components/FAQ';
 import Contact from '../components/Contact';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
@@ -18,6 +19,7 @@ const Home = () => {
         <Services />
         <WhyChooseUs />
         <Testimonials />
+        <FAQ />
         <Contact />
       </main>
       <Footer />

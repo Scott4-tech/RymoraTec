@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform, useSpring } from 'motion/react';
-import { Monitor, ShieldCheck, Network, Printer, ChevronRight } from 'lucide-react';
+import { Monitor, ShieldCheck, Network, Headphones, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 
@@ -36,14 +36,14 @@ const services = [
     path: "/networking"
   },
   {
-    subtitle: "Creative Branding",
-    title: "Printing & Design",
-    description: "Creative branding and high-quality printing services that make an impact. Transform your visual identity.",
-    icon: <Printer size={64} />,
-    image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&q=80&w=1000",
-    cta: "Start your project",
+    subtitle: "On-Demand SLA",
+    title: "IT Support as a Service",
+    description: "Enterprise-grade IT helpdesk, proactive network monitoring, hardware lifecycles, and user setup optimization.",
+    icon: <Headphones size={64} />,
+    image: "https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&q=80&w=1000",
+    cta: "Secure support",
     accent: "#10b981",
-    path: "/printing-design"
+    path: "/it-support"
   }
 ];
 

@@ -1,97 +1,113 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { Users, Zap, ShieldCheck, Cpu, Award, Layers, TrendingUp } from 'lucide-react';
+import { Users, ShieldCheck, Award, Layers, TrendingUp } from 'lucide-react';
 
 const WhyChooseUs = () => {
   const reasons = [
     {
+      title: "99.99% Uptime",
+      description: "Our SLA guarantees continuous availability and responsive managed network operations center support.",
+      icon: <ShieldCheck size={18} className="text-[#a75bf5]" />,
+      highlight: true
+    },
+    {
       title: "Reliable Expertise",
-      description: "Rymora Technologies combines technical ICT expertise with creative design solutions, allowing businesses to access professional technology and branding services from one trusted partner.",
-      icon: <Award size={24} />
+      description: "Rymora Technologies combines technical ICT expertise with secure solutions, allowing businesses to access professional technology.",
+      icon: <Award size={18} />
     },
     {
       title: "Integrated Solutions",
-      description: "We provide both technology infrastructure and creative branding services, helping businesses streamline their operations while strengthening their digital and visual presence.",
-      icon: <Layers size={24} />
+      description: "We provide both technology infrastructure and custom software systems, helping businesses streamline their operations.",
+      icon: <Layers size={18} />
     },
     {
-      title: "Customer-Focused Approach",
-      description: "We take time to understand each client’s needs and deliver customized solutions that align with their goals, ensuring long-term value and satisfaction.",
-      icon: <Users size={24} />
+      title: "Client-Centered Focus",
+      description: "We take time to understand each client’s operational context and deliver customized solutions that align with their goals.",
+      icon: <Users size={18} />
+    },
+    {
+      title: "Security & Sovereignty",
+      description: "Our commitment to top-tier security standards ensures that every solution we provide is robust, zero-trust, and sovereign.",
+      icon: <ShieldCheck size={18} />
+    },
+    {
+      title: "Innovation First",
+      description: "We continuously explore new technologies and AI tools to help Zimbabwean businesses adapt, compete, and lead.",
+      icon: <TrendingUp size={18} />
     }
   ];
 
   return (
-    <section id="why-choose-us" className="py-24 relative overflow-hidden bg-[#020617]">
-      {/* Background Accents */}
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-rymora-accent/5 rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-blue-600/5 rounded-full blur-[120px] pointer-events-none" />
+    <section id="why-choose-us" className="py-16 md:py-24 lg:py-20 relative overflow-hidden bg-[#080809] border-t border-white/[0.04] font-sans text-center">
+      {/* Background elements */}
+      <div className="absolute inset-0 opacity-[0.01] pointer-events-none">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#8827DD]/10 blur-[150px] rounded-full" />
+      </div>
 
-      <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          className="relative order-2 lg:order-1"
-        >
-          <div className="absolute inset-0 bg-rymora-accent/10 rounded-full blur-[100px]" />
-          <div className="relative glass-card p-12 flex items-center justify-center aspect-square max-w-md mx-auto border-rymora-accent/20">
-            <div className="relative">
-              <ShieldCheck size={160} className="text-rymora-accent opacity-10" />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-40 h-40 bg-rymora-accent/10 rounded-full flex items-center justify-center relative">
-                  <div className="absolute inset-0 rounded-full border border-rymora-accent/30 animate-ping" />
-                  <ShieldCheck size={80} className="text-rymora-accent drop-shadow-[0_0_15px_rgba(0,210,255,0.5)]" />
-                </div>
-              </div>
-            </div>
-            
-            {/* Floating Stats or Labels */}
-            <div className="absolute -top-4 -right-4 glass-card px-4 py-2 border-rymora-accent/30">
-              <span className="text-rymora-accent font-bold">Reliable</span>
-            </div>
-            <div className="absolute -bottom-4 -left-4 glass-card px-4 py-2 border-blue-500/30">
-              <span className="text-blue-400 font-bold">Scalable</span>
-            </div>
-          </div>
-        </motion.div>
-
-        <div className="order-1 lg:order-2">
+      <div className="max-w-6xl mx-auto px-6 relative z-10">
+        
+        {/* Center Title Area */}
+        <div className="text-center mb-16 space-y-4 flex flex-col items-center">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
+            className="flex items-center gap-3"
           >
-            <h2 className="text-4xl md:text-6xl font-display font-bold text-white mb-12 tracking-tight leading-tight">
-              Why <span className="text-transparent bg-clip-text bg-gradient-to-r from-rymora-accent to-blue-400">Choose Us</span>
-            </h2>
+            {/* Small purple square */}
+            <div className="w-2.5 h-2.5 bg-[#8827DD] shrink-0 rounded-[1px] animate-pulse" />
+            <span className="text-[13px] font-mono uppercase tracking-[0.25em] text-[#8e8e93] font-medium">
+              Enterprise Value
+            </span>
           </motion.div>
           
-          <div className="space-y-10">
-            {reasons.map((reason, index) => (
-              <motion.div 
-                key={reason.title}
-                initial={{ opacity: 0, x: 30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.2 }}
-                className="flex items-start gap-6 group"
-              >
-                <div className="mt-1 w-14 h-14 shrink-0 rounded-2xl bg-white/5 flex items-center justify-center text-rymora-accent border border-white/10 group-hover:bg-rymora-accent group-hover:text-slate-900 group-hover:border-rymora-accent transition-all duration-500 shadow-xl">
+          <motion.h2
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="font-serif text-3xl md:text-5xl font-normal text-white leading-tight max-w-3xl"
+          >
+            Sovereign Infrastructure Trust.
+          </motion.h2>
+          
+          <motion.p
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="text-zinc-400 text-base sm:text-lg font-sans font-light leading-relaxed max-w-2xl"
+          >
+            Zimbabwe's foremost enterprises rely on Rymora Technologies to secure critical datasets, scale infrastructure, and automate routine support handoffs.
+          </motion.p>
+        </div>
+
+        {/* Bottom Grid: Side-by-Side Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-left">
+          {reasons.map((reason, index) => (
+            <motion.div
+              key={reason.title}
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.05, duration: 0.5 }}
+              className="p-6 rounded-2xl border bg-[#8827DD]/10 border-[#8827DD]/30 shadow-[0_0_30px_rgba(136,39,221,0.08)] hover:bg-[#8827DD]/15 hover:border-[#8827DD]/50 hover:shadow-[0_0_35px_rgba(136,39,221,0.12)] transition-all duration-300 flex flex-col justify-between h-full group"
+            >
+              <div>
+                <div className="w-8 h-8 rounded-full flex items-center justify-center shrink-0 mb-4 transition-all duration-300 bg-[#8827DD]/20 text-[#a75bf5] group-hover:bg-[#8827DD]/30">
                   {reason.icon}
                 </div>
-                <div>
-                  <h3 className="text-2xl font-display font-bold text-white mb-3 tracking-tight group-hover:text-rymora-accent transition-colors">
-                    {reason.title}
-                  </h3>
-                  <p className="text-slate-400 leading-relaxed font-light">
-                    {reason.description}
-                  </p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
+                <h3 className="text-lg font-serif font-normal text-white mb-2">
+                  {reason.title}
+                </h3>
+                <p className="text-zinc-400 text-base leading-relaxed font-light">
+                  {reason.description}
+                </p>
+              </div>
+            </motion.div>
+          ))}
         </div>
+
       </div>
     </section>
   );

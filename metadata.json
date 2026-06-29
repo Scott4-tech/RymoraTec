@@ -1,6 +1,6 @@
 {
-  "name": "Rymora Technologies",
-  "description": "Innovative ICT & Creative Branding Solutions for Zimbabwe's Digital Excellence.",
-  "requestFramePermissions": []
+  "name": "Rymoratech Technologies",
+  "description": "Innovative ICT, Cybersecurity, & Managed IT Support Solutions for Zimbabwe's Digital Excellence.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }
-

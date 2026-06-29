@@ -3,32 +3,26 @@ import { Facebook, Instagram, Twitter, Linkedin, Github, Mail, Phone, MapPin } f
 import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 
-interface FooterProps {
-  theme?: 'dark' | 'verdant';
-}
-
-const Footer = ({ theme = 'dark' }: FooterProps) => {
-  const isVerdant = theme === 'verdant';
-  
-  const bgClass = isVerdant ? 'bg-verdant-deep' : 'bg-[#020617]';
-  const textClass = 'text-white';
-  const mutedTextClass = isVerdant ? 'text-verdant-light/60' : 'text-slate-400';
-  const accentTextClass = isVerdant ? 'text-verdant-accent' : 'text-rymora-accent';
-  const accentBgClass = isVerdant ? 'bg-verdant-accent/10 border-verdant-accent/20' : 'bg-rymora-accent/10 border-rymora-accent/20';
-  const accentHoverBgClass = isVerdant ? 'hover:border-verdant-accent/50' : 'hover:border-rymora-accent/50';
-  const borderColor = isVerdant ? 'border-white/10' : 'border-white/5';
-
+const Footer = () => {
   return (
-    <footer className={`${bgClass} ${textClass}`}>
+    <footer className="bg-[#080809] text-white border-t border-white/[0.04] font-sans">
+      
       {/* CTA Section */}
-      <div className={`py-20 border-b ${borderColor} text-center`}>
-        <div className="max-w-4xl mx-auto px-6">
-          <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">Want to be our next success story?</h2>
-          <p className={`${mutedTextClass} mb-8`}>Join the growing list of brands that trust Rymora Technologies for their digital transformation.</p>
+      <div className="py-16 md:py-20 lg:py-24 text-center bg-[#8827DD] relative overflow-hidden">
+        {/* Subtle decorative grid background for the CTA area to feel premium */}
+        <div className="absolute inset-0 tech-grid opacity-15 pointer-events-none" />
+        
+        <div className="max-w-4xl mx-auto px-6 relative z-10">
+          <h2 className="font-serif text-3xl md:text-5xl font-normal mb-4 text-white tracking-tight">
+            Want to be our next success story?
+          </h2>
+          <p className="text-purple-100/90 text-base sm:text-lg font-light mb-8 max-w-lg mx-auto leading-relaxed">
+            Join the growing list of Zimbabwean enterprises that trust Rymora Technologies for absolute control of their IT platforms.
+          </p>
           <HashLink 
             to="/#contact" 
             smooth
-            className={`${isVerdant ? 'bg-verdant-accent hover:bg-white' : 'bg-rymora-accent hover:bg-white'} text-slate-900 px-8 py-3 rounded-lg font-bold transition-all inline-block`}
+            className="bg-white hover:bg-black hover:text-white text-[#8827DD] text-base font-mono font-medium tracking-widest uppercase px-8 py-3.5 rounded-full transition-all duration-300 inline-block cursor-pointer shadow-lg hover:shadow-xl"
           >
             Let's Work Together
           </HashLink>
@@ -36,81 +30,94 @@ const Footer = ({ theme = 'dark' }: FooterProps) => {
       </div>
 
       {/* Main Footer Content */}
-      <div className="py-20">
-        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+      <div className="py-12 md:py-16 lg:py-12">
+        <div className="max-w-4xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12 text-left">
+          
           {/* Brand Column */}
-          <div className="space-y-6">
-            <Link to="/" className="flex items-center gap-3 group">
-              <div className={`w-10 h-10 rounded-lg ${accentBgClass} flex items-center justify-center overflow-hidden border ${accentHoverBgClass} transition-all`}>
-                <img 
-                  src="/logo.png" 
-                  alt="Rymora Logo" 
-                  className="w-full h-full object-cover"
-                  referrerPolicy="no-referrer"
-                />
-              </div>
-              <span className="text-2xl font-display font-bold tracking-tight">
-                Rymora<span className={accentTextClass}>Technologies</span>
+          <div className="space-y-6 md:col-span-1">
+            <Link to="/" className="flex items-center gap-2 group">
+              <svg 
+                viewBox="0 0 24 24" 
+                fill="currentColor" 
+                className="w-4 h-4 text-white"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M12 0L14.5 9.5H24L16.25 15.5L18.75 25L12 19L5.25 25L7.75 15.5L0 9.5H9.5L12 0Z" />
+              </svg>
+              <span className="font-sans text-base font-medium tracking-tight text-white uppercase">
+                Rymoratech
               </span>
             </Link>
-            <p className={`${mutedTextClass} text-sm leading-relaxed`}>
-              Building modern, fast, and intelligent digital experiences — from web to AI.
+            <p className="text-zinc-500 text-[15px] font-light leading-relaxed">
+              Sovereign enterprise networking, zero-trust cybersecurity, and elite 24/7/365 helpdesk support.
             </p>
             <div className="flex gap-4">
-              <a href="#" className={`${mutedTextClass} hover:${accentTextClass} transition-colors`}><Facebook size={20} /></a>
-              <a href="https://www.instagram.com/rymoratechnologies/" className={`${mutedTextClass} hover:${accentTextClass} transition-colors`}><Instagram size={20} /></a>
-              <a href="https://www.linkedin.com/company/rymora-technologies/" className={`${mutedTextClass} hover:${accentTextClass} transition-colors`}><Linkedin size={20} /></a>
+              <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" className="text-zinc-500 hover:text-white transition-colors"><Facebook size={14} /></a>
+              <a href="https://www.instagram.com/rymora_technologies?igsh=ZzJhb2U2ZjY4c3lw" target="_blank" rel="noopener noreferrer" className="text-zinc-500 hover:text-white transition-colors"><Instagram size={14} /></a>
+              
+              <a href="https://www.linkedin.com/company/rymora-technologies/" target="_blank" rel="noopener noreferrer" className="text-zinc-500 hover:text-white transition-colors"><Linkedin size={14} /></a>
+              
             </div>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-lg font-bold mb-6">Quick Links</h4>
-            <ul className={`space-y-4 ${mutedTextClass} text-sm`}>
-              <li><HashLink to="/#" smooth className={`hover:${accentTextClass} transition-colors`}>Home</HashLink></li>
-              <li><HashLink to="/#about" smooth className={`hover:${accentTextClass} transition-colors`}>About Us</HashLink></li>
-              <li><HashLink to="/#services" smooth className={`hover:${accentTextClass} transition-colors`}>Services</HashLink></li>
-              <li><HashLink to="/#contact" smooth className={`hover:${accentTextClass} transition-colors`}>Contact</HashLink></li>
+            <h4 className="text-[15px] font-mono uppercase tracking-[0.2em] text-zinc-400 mb-6 font-bold">Quick Links</h4>
+            <ul className="space-y-3 text-[14px] font-light text-zinc-500">
+              <li><HashLink to="/#" smooth className="hover:text-white transition-colors">Home</HashLink></li>
+              <li><HashLink to="/#about" smooth className="hover:text-white transition-colors">About Us</HashLink></li>
+              <li><HashLink to="/#services" smooth className="hover:text-white transition-colors">Services</HashLink></li>
+              <li><HashLink to="/#contact" smooth className="hover:text-white transition-colors">Contact</HashLink></li>
+              <li><Link to="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link></li>
+              <li><Link to="/terms" className="hover:text-white transition-colors">Terms & Conditions</Link></li>
             </ul>
           </div>
 
           {/* Services */}
           <div>
-            <h4 className="text-lg font-bold mb-6">Services</h4>
-            <ul className={`space-y-4 ${mutedTextClass} text-sm`}>
-              <li><Link to="/ict-solutions" className={`hover:${accentTextClass} transition-colors`}>ICT Solutions</Link></li>
-              <li><Link to="/cybersecurity" className={`hover:${accentTextClass} transition-colors`}>Cybersecurity</Link></li>
-              <li><Link to="/networking" className={`hover:${accentTextClass} transition-colors`}>Networking</Link></li>
-              <li><HashLink to="/printing-design" smooth className={`hover:${accentTextClass} transition-colors`}>Printing & Design</HashLink></li>
-              <li>Custom Software</li>
+            <h4 className="text-[15px] font-mono uppercase tracking-[0.2em] text-zinc-400 mb-6 font-bold">Capabilities</h4>
+            <ul className="space-y-3 text-[14px] font-light text-zinc-500">
+              <li><Link to="/ict-solutions" className="hover:text-white transition-colors">ICT Solutions</Link></li>
+              <li><Link to="/cybersecurity" className="hover:text-white transition-colors">Cybersecurity</Link></li>
+              <li><Link to="/networking" className="hover:text-white transition-colors">Networking</Link></li>
+              <li><Link to="/it-support" className="hover:text-white transition-colors">IT Support</Link></li>
+              <li><Link to="/enpass" className="hover:text-white transition-colors">Enpass Vaults</Link></li>
             </ul>
           </div>
 
           {/* Get in Touch */}
-          <div>
-            <h4 className="text-lg font-bold mb-6">Get in Touch</h4>
-            <ul className={`space-y-4 ${mutedTextClass} text-sm`}>
-              <li className="flex items-center gap-3">
-                <Mail size={18} className={accentTextClass} />
-                <a href="mailto:info@rymora.co.zw" className={`hover:${accentTextClass} transition-colors`}>info@rymoratech.co.zw</a>
+          <div className="space-y-3">
+            <h4 className="text-[15px] font-mono uppercase tracking-[0.2em] text-zinc-400 mb-6 font-bold">Get in Touch</h4>
+            <ul className="space-y-3 text-[14px] font-light text-zinc-500">
+              <li className="flex items-center gap-2.5">
+                <Mail size={12} className="text-zinc-400" />
+                <a href="mailto:info@rymoratech.co.zw" className="hover:text-white transition-colors font-mono truncate">info@rymoratech.co.zw</a>
               </li>
-              <li className="flex items-center gap-3">
-                <Phone size={18} className={accentTextClass} />
-                <a href="tel:+263789057818" className={`hover:${accentTextClass} transition-colors`}>+263 78 905 7818</a>
+              <li className="flex items-center gap-2.5">
+                <Phone size={12} className="text-zinc-400" />
+                <a href="tel:+263789057818" className="hover:text-white transition-colors font-mono truncate">+263 78 905 7818</a>
               </li>
-              <li className="flex items-center gap-3">
-                <MapPin size={18} className={accentTextClass} />
+              <li className="flex items-center gap-2.5">
+                <MapPin size={12} className="text-zinc-400 animate-bounce" />
                 <span>Harare, Zimbabwe</span>
               </li>
             </ul>
           </div>
+
         </div>
       </div>
 
       {/* Copyright Bar */}
-      <div className={`py-8 border-t ${borderColor} text-center ${isVerdant ? 'text-verdant-light/40' : 'text-slate-500'} text-xs`}>
-        <div className="max-w-7xl mx-auto px-6">
-          © 2026 <span className={`${accentTextClass} font-medium`}>Rymora Technologies</span>. All rights reserved.
+      <div className="py-8 border-t border-white/[0.04] text-zinc-600 text-[14px] font-mono uppercase tracking-wider">
+        <div className="max-w-4xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div>
+            © 2026 Rymoratech Technologies. All rights reserved. Registered Zimbabwe Company.
+          </div>
+          <div className="flex gap-4">
+            <Link to="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
+            <span className="text-zinc-800">•</span>
+            <Link to="/terms" className="hover:text-white transition-colors">Terms & Conditions</Link>
+          </div>
         </div>
       </div>
     </footer>

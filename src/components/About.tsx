@@ -1,109 +1,145 @@
-import React from 'react';
-import { motion } from 'motion/react';
-import { Target, Eye, ShieldCheck, Zap } from 'lucide-react';
+import React, { useState, useRef } from 'react';
+import { motion, AnimatePresence, useScroll, useTransform } from 'motion/react';
+
+const ScrollWordReveal = ({ text }: { text: string }) => {
+  const containerRef = useRef<HTMLParagraphElement>(null);
+  
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start 80%", "end 50%"]
+  });
+
+  const words = text.split(" ");
+
+  return (
+    <p 
+      ref={containerRef}
+      className="font-serif text-2xl sm:text-3xl md:text-[35px] font-normal leading-[1.35] text-center max-w-4xl flex flex-wrap justify-center"
+    >
+      {words.map((word, i) => {
+        const start = i / words.length;
+        const end = (i + 1) / words.length;
+        
+        const color = useTransform(
+          scrollYProgress,
+          [start, end],
+          ["#52525b", "#ffffff"]
+        );
+
+        return (
+          <motion.span 
+            key={i} 
+            style={{ color }}
+            className="mr-[0.25em] inline-block"
+          >
+            {word}
+          </motion.span>
+        );
+      })}
+    </p>
+  );
+};
 
 const About = () => {
-  const values = [
+  const [activeIndex, setActiveIndex] = useState<number>(0);
+
+  const principles = [
     {
-      icon: <Target className="text-rymora-accent" size={24} />,
-      title: "Our Mission",
-      description: "To empower Zimbabwean businesses through innovative, scalable, and intelligent digital solutions that drive growth and efficiency."
+      title: "Solving real problems",
+      description: "We work with teams addressing clear, tangible problems that users actually need solved. By focusing on practical application and functional impact, we deliver systems that create immediate business value."
     },
     {
-      icon: <Eye className="text-rymora-accent" size={24} />,
-      title: "Our Vision",
-      description: "To be the leading catalyst for digital transformation in Africa, setting the standard for excellence in software engineering and AI automation."
+      title: "Early momentum",
+      description: "There are signs of user interest, activity, or early traction showing something is starting to work. We build on top of these positive signals to accelerate performance and unlock compounding growth."
     },
     {
-      icon: <ShieldCheck className="text-rymora-accent" size={24} />,
-      title: "Our Commitment",
-      description: "We are dedicated to delivering high-quality, secure, and reliable technology that solves real-world business challenges."
+      title: "Consistency",
+      description: "We work with teams that continue building, testing, and improving instead of stopping at initial ideas. Uncompromising refinement and attention to operational details are what define our engineering culture."
     },
     {
-      icon: <Zap className="text-rymora-accent" size={24} />,
-      title: "Innovation First",
-      description: "We constantly explore emerging technologies like AI and machine learning to keep our clients ahead of the competition."
+      title: "Building with intent",
+      description: "The product is built with clear thinking behind what is being built and why it matters. Every architectural layer we design and every security perimeter we deploy is guided by absolute purpose."
     }
   ];
 
   return (
-    <section id="about" className="py-24 relative overflow-hidden bg-[#020617]">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-8">
-              Driving Digital <span className="text-rymora-accent">Excellence</span> in Zimbabwe
-            </h2>
-            <div className="space-y-6 text-slate-400 text-lg leading-relaxed">
-              <p>
-                Rymora Technologies (Private Limited) is a mission-driven tech powerhouse dedicated to transforming the digital landscape. We combine innovative thinking with technical expertise to deliver solutions that empower businesses and communities.
-              </p>
-              <p>
-                Founded on the principles of integrity and technical precision, we have grown into a multi-disciplinary team of engineers and IT experts. As the official distributor of Enpass in Zimbabwe, we deliver top-tier password management alongside our advanced software engineering and AI automation solutions.
-              </p>
-              <p>
-                Our approach is deeply collaborative. We work as an extension of your team, ensuring that every line of code we write and every system we automate aligns perfectly with your long-term strategic goals.
-              </p>
-            </div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="relative"
-          >
-            <div className="aspect-square rounded-3xl overflow-hidden border border-white/10 relative z-10">
-              <img 
-                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2000&auto=format&fit=crop" 
-                alt="Our Team" 
-                className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
-                referrerPolicy="no-referrer"
-              />
-            </div>
-            {/* Decorative elements */}
-            <div className="absolute -top-6 -right-6 w-32 h-32 bg-rymora-accent/20 rounded-full blur-3xl" />
-            <div className="absolute -bottom-10 -left-10 w-48 h-48 bg-blue-600/10 rounded-full blur-3xl" />
-          </motion.div>
+    <section id="about" className="py-16 md:py-24 lg:py-20 bg-[#080809] border-t border-white/[0.04] relative overflow-hidden text-left">
+      <div className="max-w-4xl mx-auto px-6">
+        
+        {/* Core Paragraph Section - EXACT COPY of Image 3 style */}
+        <div className="text-center mb-16 md:mb-24 lg:mb-16 flex flex-col items-center">
+          {/* Small Purple Square */}
+          <div className="w-2.5 h-2.5 bg-[#8827DD] rounded-[1px] mb-6 animate-pulse" />
+          
+          <span className="font-mono text-[15px] uppercase tracking-[0.25em] text-[#8e8e93] font-medium mb-8 max-w-lg leading-relaxed text-center">
+            ENGINEERING THE INFRASTRUCTURE BEHIND AFRICA'S DIGITAL BUILDERS
+          </span>
+          
+          <ScrollWordReveal text="Rymora works with founders, enterprise leaders, and ecosystem partners to transform complex digital challenges into scalable, secure systems. Through strategic positioning, cloud architecture, and zero-trust security systems, we help builders reach global standards." />
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {values.map((item, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              whileHover={{ 
-                y: -12,
-                backgroundColor: "rgba(255, 255, 255, 0.08)",
-                borderColor: "rgba(74, 222, 128, 0.4)" 
-              }}
-              viewport={{ once: true }}
-              transition={{ 
-                type: "spring",
-                stiffness: 300,
-                damping: 20,
-                delay: index * 0.1 
-              }}
-              className="p-8 rounded-2xl bg-white/5 border border-white/10 transition-colors group cursor-default"
-            >
-              <motion.div 
-                whileHover={{ rotate: 10, scale: 1.1 }}
-                className="w-14 h-14 rounded-xl bg-rymora-accent/10 flex items-center justify-center mb-6 transition-colors group-hover:bg-rymora-accent/20"
-              >
-                {item.icon}
-              </motion.div>
-              <h3 className="text-xl font-bold text-white mb-3 group-hover:text-rymora-accent transition-colors">{item.title}</h3>
-              <p className="text-slate-400 text-sm leading-relaxed group-hover:text-slate-300 transition-colors">{item.description}</p>
-            </motion.div>
-          ))}
+        {/* Operational Principles List Section - EXACT COPY of Image 2 style */}
+        <div className="border-t border-white/[0.08] pt-16 md:pt-20 lg:pt-16">
+          <div className="mb-12">
+            <span className="font-mono text-[15px] uppercase tracking-[0.25em] text-[#a75bf5] font-semibold block mb-2">
+              Operational Culture
+            </span>
+            <h3 className="text-white font-serif text-3xl font-normal">
+              How we build.
+            </h3>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
+            
+            {/* Principles Selector List */}
+            <div className="md:col-span-5 space-y-4">
+              {principles.map((item, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => setActiveIndex(idx)}
+                  className="w-full text-left py-4 px-6 flex items-center transition-all focus:outline-none relative cursor-pointer"
+                >
+                  {/* Left white border bar for active item, matching screenshot */}
+                  <div 
+                    className={`absolute left-0 top-0 bottom-0 w-[2px] transition-all duration-300 ${
+                      activeIndex === idx ? 'bg-white' : 'bg-transparent'
+                    }`} 
+                  />
+                  <span 
+                    className={`font-serif text-xl md:text-2xl transition-all duration-300 ${
+                      activeIndex === idx ? 'text-white' : 'text-zinc-600 hover:text-zinc-400'
+                    }`}
+                  >
+                    {item.title}
+                  </span>
+                </button>
+              ))}
+            </div>
+
+            {/* Principles Description Box */}
+            <div className="md:col-span-7 bg-white/[0.01] border border-white/[0.03] rounded-2xl p-8 min-h-[220px] flex items-center justify-center">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={activeIndex}
+                  initial={{ opacity: 0, x: 10 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -10 }}
+                  transition={{ duration: 0.25 }}
+                  className="space-y-4"
+                >
+                  <h4 className="font-serif text-xl text-white font-medium">
+                    {principles[activeIndex].title}
+                  </h4>
+                  <p className="text-zinc-400 text-base  font-sans font-light leading-relaxed">
+                    {principles[activeIndex].description}
+                  </p>
+                </motion.div>
+              </AnimatePresence>
+            </div>
+
+          </div>
         </div>
+
       </div>
     </section>
   );

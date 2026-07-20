@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { motion, AnimatePresence, useScroll, useTransform } from 'motion/react';
+import { Helmet } from 'react-helmet-async';
 
 const ScrollWordReveal = ({ text }: { text: string }) => {
   const containerRef = useRef<HTMLParagraphElement>(null);
@@ -63,6 +64,11 @@ const About = () => {
   ];
 
   return (
+    <>
+    <Helmet>
+      <title>About Us | Rymora Technologies</title>
+      <link rel="canonical" href="https://rymoratech.co.zw/about" />
+    </Helmet>
     <section id="about" className="py-16 md:py-24 lg:py-20 bg-[#080809] border-t border-white/[0.04] relative overflow-hidden text-left">
       <div className="max-w-4xl mx-auto px-6">
         
@@ -142,6 +148,7 @@ const About = () => {
 
       </div>
     </section>
+    </>
   );
 };
 

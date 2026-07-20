@@ -4,6 +4,8 @@ import { Network, Wifi, Server, Share2, Radio, Activity, ArrowRight } from 'luci
 import { HashLink } from 'react-router-hash-link';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import { Helmet } from 'react-helmet-async';
+
 
 const Networking = () => {
   const features = [
@@ -40,6 +42,11 @@ const Networking = () => {
   ];
 
   return (
+     <>
+            <Helmet>
+              <title>Networking | Rymora Technologies</title>
+              <link rel="canonical" href="https://rymoratech.co.zw/networking " />
+            </Helmet>
     <div className="bg-canvas-white min-h-screen text-cohere-black selection:bg-action-blue/30 font-sans">
       <Navbar />
       
@@ -120,6 +127,7 @@ const Networking = () => {
 
       <Footer />
     </div>
+    </>
   );
 };
 

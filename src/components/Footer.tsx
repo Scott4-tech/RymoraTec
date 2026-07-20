@@ -2,9 +2,15 @@ import React from 'react';
 import { Facebook, Instagram, Twitter, Linkedin, Github, Mail, Phone, MapPin } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
+import { Helmet } from 'react-helmet-async';
 
 const Footer = () => {
   return (
+    <>
+        <Helmet>
+          <title>Footer | Rymora Technologies</title>
+          <link rel="canonical" href="https://rymoratech.co.zw/footer" />
+        </Helmet>
     <footer className="bg-[#080809] text-white border-t border-white/[0.04] font-sans">
       
       {/* CTA Section */}
@@ -121,6 +127,7 @@ const Footer = () => {
         </div>
       </div>
     </footer>
+    </>
   );
 };
 

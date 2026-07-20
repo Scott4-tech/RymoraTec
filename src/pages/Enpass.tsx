@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
+import { Helmet } from 'react-helmet-async';
 import { 
   Shield, 
   Key, 
@@ -158,6 +159,11 @@ const EnpassPage = () => {
   ];
 
   return (
+     <>
+            <Helmet>
+              <title>Enpass | Rymora Technologies</title>
+              <link rel="canonical" href="https://rymoratech.co.zw/enpass " />
+            </Helmet>
     <div className="bg-canvas-white min-h-screen text-cohere-black selection:bg-action-blue/30 font-sans">
       <Navbar />
 
@@ -603,6 +609,7 @@ const EnpassPage = () => {
 
       <Footer />
     </div>
+    </>
   );
 };
 

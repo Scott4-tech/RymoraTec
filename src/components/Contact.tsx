@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
+import { Helmet } from 'react-helmet-async';
 import { 
   Mail, 
   Phone, 
@@ -140,6 +141,11 @@ const Contact = () => {
   const labelClass = "block text-[12px] font-mono uppercase tracking-[0.15em] mb-2 text-blue-300/70";
 
   return (
+    <>
+        <Helmet>
+          <title>Contact | Rymora Technologies</title>
+          <link rel="canonical" href="https://rymoratech.co.zw/contact" />
+        </Helmet>
     <section id="contact" className="py-16 md:py-24 lg:py-20 relative overflow-hidden bg-[#080809] border-t border-white/[0.04] font-sans text-left">
       <div className="max-w-4xl mx-auto px-6 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-16 items-start">
@@ -475,6 +481,7 @@ const Contact = () => {
         </div>
       </div>
     </section>
+    </>
   );
 };
 

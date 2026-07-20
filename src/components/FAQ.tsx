@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ChevronDown, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
-
+import { Helmet } from 'react-helmet-async';
 const FAQ = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
@@ -30,6 +30,11 @@ const FAQ = () => {
   ];
 
   return (
+    <>
+        <Helmet>
+          <title>FAQs | Rymora Technologies</title>
+          <link rel="canonical" href="https://rymoratech.co.zw/FAQs" />
+        </Helmet>
     <section id="faq" className="py-16 md:py-24 lg:py-20 bg-[#080809] border-t border-white/[0.04] relative overflow-hidden font-sans text-left">
       <div className="max-w-4xl mx-auto px-6 relative z-10">
         <div className="mb-12 md:mb-16 lg:mb-12">
@@ -106,6 +111,7 @@ const FAQ = () => {
         </div>
       </div>
     </section>
+    </>
   );
 };
 

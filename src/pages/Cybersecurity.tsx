@@ -4,6 +4,7 @@ import { Shield, Lock, Eye, AlertTriangle, FileCheck, Users, ArrowRight } from '
 import { HashLink } from 'react-router-hash-link';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import { Helmet } from 'react-helmet-async';
 
 const Cybersecurity = () => {
   const features = [
@@ -40,6 +41,11 @@ const Cybersecurity = () => {
   ];
 
   return (
+    <>
+        <Helmet>
+          <title>Cybersecurity | Rymora Technologies</title>
+          <link rel="canonical" href="https://rymoratech.co.zw/cybersecurity " />
+        </Helmet>
     <div className="bg-canvas-white min-h-screen text-cohere-black selection:bg-action-blue/30 font-sans">
       <Navbar />
       
@@ -157,6 +163,7 @@ const Cybersecurity = () => {
 
       <Footer />
     </div>
+    </>
   );
 };
 

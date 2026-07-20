@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { HashLink } from 'react-router-hash-link';
+import { Helmet } from 'react-helmet-async';
 
 const CountUp = ({ to, duration = 1.5, decimals = 0 }: { to: number; duration?: number; decimals?: number }) => {
   const [count, setCount] = React.useState(0);
@@ -67,6 +68,11 @@ const Hero = () => {
   ];
 
   return (
+    <>
+        <Helmet>
+          <title>Hero | Rymora Technologies</title>
+          <link rel="canonical" href="https://rymoratech.co.zw/hero" />
+        </Helmet>
     <section className="relative min-h-screen pt-28 pb-12 lg:pt-36 lg:pb-16 overflow-hidden bg-[#080809] font-sans flex flex-col justify-center items-center">
       {/* Background Subtle Ambient Lights */}
       <div className="absolute inset-0 pointer-events-none z-0">
@@ -199,6 +205,7 @@ const Hero = () => {
 
       </div>
     </section>
+    </>
   );
 };
 

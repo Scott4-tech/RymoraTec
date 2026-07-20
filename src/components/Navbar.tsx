@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { X, ChevronDown, Laptop, Shield, Network, Headphones, Lock } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
+import { Helmet } from 'react-helmet-async';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -51,6 +52,11 @@ const Navbar = () => {
   ];
 
   return (
+    <>
+        <Helmet>
+          <title>Navbar | Rymora Technologies</title>
+          <link rel="canonical" href="https://rymoratech.co.zw/navbar" />
+        </Helmet>
     <div className="fixed top-0 w-full z-50 flex flex-col font-sans">
       {/* Announcement Bar */}
       <AnimatePresence>
@@ -311,6 +317,7 @@ const Navbar = () => {
         )}
       </AnimatePresence>
     </div>
+    </>
   );
 };
 

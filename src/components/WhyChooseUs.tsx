@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { Users, ShieldCheck, Award, Layers, TrendingUp } from 'lucide-react';
+import { Helmet } from 'react-helmet-async';
 
 const WhyChooseUs = () => {
   const reasons = [
@@ -38,6 +39,11 @@ const WhyChooseUs = () => {
   ];
 
   return (
+    <>
+        <Helmet>
+          <title>Why choose us | Rymora Technologies</title>
+          <link rel="canonical" href="https://rymoratech.co.zw/whychooseus" />
+        </Helmet>
     <section id="why-choose-us" className="py-16 md:py-24 lg:py-20 relative overflow-hidden bg-[#080809] border-t border-white/[0.04] font-sans text-center">
       {/* Background elements */}
       <div className="absolute inset-0 opacity-[0.01] pointer-events-none">
@@ -110,6 +116,7 @@ const WhyChooseUs = () => {
 
       </div>
     </section>
+    </>
   );
 };
 

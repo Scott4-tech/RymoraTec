@@ -3,6 +3,7 @@ import { motion } from 'motion/react';
 import { Shield, Eye, Lock, Globe, FileText } from 'lucide-react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import { Helmet } from 'react-helmet-async';
 
 const PrivacyPolicy = () => {
   const sections = [
@@ -29,6 +30,11 @@ const PrivacyPolicy = () => {
   ];
 
   return (
+     <>
+            <Helmet>
+              <title>Privacy Policy | Rymora Technologies</title>
+              <link rel="canonical" href="https://rymoratech.co.zw/privacypolicy " />
+            </Helmet>
     <div className="bg-canvas-white min-h-screen text-ink selection:bg-action-blue/30 font-sans">
       <Navbar />
       
@@ -104,6 +110,7 @@ const PrivacyPolicy = () => {
 
       <Footer />
     </div>
+    </>
   );
 };
 

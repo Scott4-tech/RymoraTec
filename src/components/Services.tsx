@@ -3,6 +3,7 @@ import { motion, useScroll, useTransform, useSpring } from 'motion/react';
 import { Monitor, ShieldCheck, Network, Headphones, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
+import { Helmet } from 'react-helmet-async';
 
 const services = [
   {
@@ -69,6 +70,11 @@ const Services = () => {
   );
 
   return (
+    <>
+        <Helmet>
+          <title>Services| Rymora Technologies</title>
+          <link rel="canonical" href="https://rymoratech.co.zw/services" />
+        </Helmet>
     <section id="services" className="relative bg-[#080809] border-t border-white/[0.04]">
       {/* Desktop View: Grid of Divs */}
       <div className="hidden md:block py-16 md:py-24 lg:py-20 bg-[#080809] relative overflow-hidden text-left">
@@ -230,6 +236,7 @@ const Services = () => {
         </div>
       </div>
     </section>
+    </>
   );
 };
 
@@ -256,6 +263,11 @@ const ActiveServiceText = ({ service, index, progress }: { service: any; index: 
   );
 
   return (
+    <>
+        <Helmet>
+          <title>Services | Rymora Technologies</title>
+          <link rel="canonical" href="https://rymoratech.co.zw/services" />
+        </Helmet>
     <motion.div 
       style={{ 
         opacity, 
@@ -290,6 +302,7 @@ const ActiveServiceText = ({ service, index, progress }: { service: any; index: 
         </Link>
       )}
     </motion.div>
+    </>
   );
 };
 
